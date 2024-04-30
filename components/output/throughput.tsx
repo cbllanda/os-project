@@ -10,7 +10,7 @@ function Throughput({ numberOfProcesses, totalTime }: ThroughputProps) {
 
   return (
     <div className="my-[0.8rem]">
-      <label className="font-medium">Throughput: </label>
+      <label className="font-semibold">Throughput: </label>
       <Code className="tracking-wide" size="md">
         {numberOfProcesses} / {totalTime} = {throughput.toFixed(2)}
       </Code>

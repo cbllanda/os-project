@@ -13,7 +13,7 @@ function AverageWaitingTime({
 
   return (
     <div className="my-[0.8rem]">
-      <label className="font-medium">Average Waiting Time: </label>
+      <label className="font-semibold">Average Waiting Time: </label>
       <Code className="tracking-wide" size="md">
         {totalWaitingTime} / {numberOfProcesses} ={" "}
         {averageWaitingTime.toFixed(2)}ms

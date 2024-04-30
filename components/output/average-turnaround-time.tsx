@@ -13,7 +13,7 @@ function AverageTurnaroundTime({
 
   return (
     <div className="my-[0.8rem]">
-      <label className="font-medium">Average Turnaround Time: </label>
+      <label className="font-semibold">Average Turnaround Time: </label>
       <Code className="tracking-wide" size="md">
         {totalTurnaroundTime} / {numberOfProcesses} ={" "}
         {averageTurnaroundTime.toFixed(2)}ms
