@@ -15,7 +15,7 @@ function CpuUtilization({ totalCpuTime, totalElapsedTime }: CpuProps) {
   return (
     <div className="my-[0.8rem]">
       <label className="font-semibold">CPU Utilization: </label>
-      <Code className={cn("tracking-wide text-primary", fontMono.className)} size="md">{totalCpuTime} / {totalElapsedTime} * 100 = {cpuUtilization.toFixed(2)}%</Code>
+      <Code className={cn("tracking-wide text-primary block w-fit mt-1 sm:inline-block sm:mt-0", fontMono.className)} size="md">{totalCpuTime} / {totalElapsedTime} * 100 = {cpuUtilization.toFixed(2)}%</Code>
     </div>
   );
 }

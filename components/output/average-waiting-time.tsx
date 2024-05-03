@@ -17,7 +17,7 @@ function AverageWaitingTime({
   return (
     <div className="my-[0.8rem]">
       <label className="font-semibold">Average Waiting Time: </label>
-      <Code className={cn("tracking-wide text-primary", fontMono.className)} size="md">
+      <Code className={cn("tracking-wide text-primary block w-fit mt-1 sm:inline-block sm:mt-0", fontMono.className)} size="md">
         {totalWaitingTime} / {numberOfProcesses} ={" "}
         {averageWaitingTime.toFixed(2)}ms
       </Code>

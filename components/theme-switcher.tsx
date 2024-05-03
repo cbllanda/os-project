@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { useTheme } from "next-themes";
-import { CloudMoon, Moon, Sun } from "lucide-react";
+import { Sun, Moon, Monitor } from "lucide-react";
 
 import {
   Dropdown,
@@ -55,7 +55,7 @@ function ThemeSwitcher({ className }: ThemeSwitcherProps) {
           <DropdownItem
             key="system"
             onPress={() => setTheme("system")}
-            startContent={<CloudMoon className="w-5 h-5" />}
+            startContent={<Monitor className="w-5 h-5" />}
           >
             System
           </DropdownItem>

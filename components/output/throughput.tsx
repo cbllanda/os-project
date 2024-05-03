@@ -14,7 +14,7 @@ function Throughput({ numberOfProcesses, totalTime }: ThroughputProps) {
   return (
     <div className="my-[0.8rem]">
       <label className="font-semibold">Throughput: </label>
-      <Code className={cn("tracking-wide text-primary", fontMono.className)} size="md">
+      <Code className={cn("tracking-wide text-primary block w-fit mt-1 sm:inline-block sm:mt-0", fontMono.className)} size="md">
         {numberOfProcesses} / {totalTime} = {throughput.toFixed(2)}
       </Code>
     </div>
