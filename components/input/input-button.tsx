@@ -1,10 +1,10 @@
 import { Button } from "@nextui-org/button";
 
-interface MyButtonProps {
+interface InputButtonProps {
   isPending: boolean;
 }
 
-function MyButton({ isPending }: MyButtonProps) {
+function InputButton({ isPending }: InputButtonProps) {
   return (
     <Button
       type="submit"
@@ -14,9 +14,7 @@ function MyButton({ isPending }: MyButtonProps) {
     >
       Calculate
     </Button>
-
-    
   );
 }
 
-export default MyButton;
+export default InputButton;

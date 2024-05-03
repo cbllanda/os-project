@@ -8,6 +8,7 @@ import React, {
   useRef,
   useTransition,
 } from "react";
+import toast from "react-hot-toast";
 
 import { Input } from "@nextui-org/input";
 import { Card, CardBody } from "@nextui-org/card";
@@ -16,8 +17,7 @@ import SelectAlgo, {
   OptionType,
   defaultOption,
 } from "@/components/input/select-algo";
-import CustomToast from "@/components/input/custom-toast";
-import MyButton from "./my-button";
+import InputButton from "@/components/input/input-button";
 
 type InputProps = {
   selectedAlgo: OptionType;
@@ -63,25 +63,23 @@ function Inputs(props: InputProps) {
       .map((priority) => parseInt(priority));
 
     if (burstTimeArr.includes(0)) {
-      CustomToast("0 burst time is invalid", { variant: "error" });
+      toast("0 burst time is invalid", {icon: "❌"});
       return;
     } else if (arrivalTimeArr.length !== burstTimeArr.length) {
-      CustomToast("The number of arrival times and burst times must be equal", {
-        variant: "error",
-      });
+        toast("The number of arrival times and burst times must be equal", {icon: "❌"});
       return;
     } else if (
       arrivalTimeArr.some((t) => isNaN(t)) ||
       burstTimeArr.some((t) => isNaN(t)) ||
       (selectedAlgo.value === "RR" && isNaN(timeQuantumInt))
     ) {
-      CustomToast("Invalid input", { variant: "error" });
+      toast("Invalid input", {icon: "❌"});
       return;
     } else if (
       arrivalTimeArr.some((t) => t < 0) ||
       burstTimeArr.some((t) => t < 0)
     ) {
-      CustomToast("Negative intergers are invalid", { variant: "error" });
+      toast("Negative integers are not allowed", {icon: "❌"});
       return;
     }
 
@@ -92,12 +90,7 @@ function Inputs(props: InputProps) {
         prioritiesArr.length !== arrivalTimeArr.length ||
         prioritiesArr.length !== arrivalTimeArr.length
       ) {
-        CustomToast(
-          "Arrival times, burst times and priorities should have equal length",
-          {
-            variant: "error",
-          }
-        );
+        toast("The number of arrival times and priorities must be equal", {icon: "❌"});
         return;
       }
     }
@@ -109,7 +102,9 @@ function Inputs(props: InputProps) {
         props.setBurstTime(burstTimeArr),
         props.setTimeQuantum(timeQuantumInt),
         props.setPriorities(prioritiesArr),
-      ]);
+      ]).then(() => {
+        toast.success("Input received", {icon: "✅"});
+      })
     });
   }
 
@@ -201,7 +196,7 @@ function Inputs(props: InputProps) {
                 isDisabled={isPending}
               />
             )}
-            <MyButton isPending={isPending} />
+            <InputButton isPending={isPending} />
           </div>
         </form>
       </CardBody>
