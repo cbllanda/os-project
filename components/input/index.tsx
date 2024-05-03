@@ -81,7 +81,9 @@ function Inputs(props: InputProps) {
     ) {
       toast("Negative integers are not allowed", {icon: "❌"});
       return;
-    }
+    } else if (selectedAlgo.value === "RR" && timeQuantumInt < 0) (
+      toast("Negative integers are not allowed", {icon: "❌"})
+    )
 
     if (selectedAlgo.value === "NPP" || selectedAlgo.value === "PP") {
       if (priorities.trim() === "") {
