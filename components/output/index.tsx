@@ -54,7 +54,7 @@ function Output({
           <div className="flex flex-col relative">
             <Chip
               color="primary"
-              className="flex mb-[0.75rem] self-center p-[0.8rem] px-[1.75rem]"
+              className="flex mb-[0.75rem] self-center p-[0.8rem] px-[1rem]"
             >
               {selectedAlgo.label}
             </Chip>
