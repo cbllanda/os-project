@@ -63,27 +63,30 @@ function Inputs(props: InputProps) {
       .map((priority) => parseInt(priority));
 
     if (burstTimeArr.includes(0)) {
-      toast("0 burst time is invalid", {icon: "❌"});
+      toast("0 burst time is invalid", { icon: "❌" });
       return;
     } else if (arrivalTimeArr.length !== burstTimeArr.length) {
-        toast("The number of arrival times and burst times must be equal", {icon: "❌"});
+      toast("The number of arrival times and burst times must be equal", {
+        icon: "❌",
+      });
       return;
     } else if (
       arrivalTimeArr.some((t) => isNaN(t)) ||
       burstTimeArr.some((t) => isNaN(t)) ||
       (selectedAlgo.value === "RR" && isNaN(timeQuantumInt))
     ) {
-      toast("Invalid input", {icon: "❌"});
+      toast("Invalid input", { icon: "❌" });
       return;
     } else if (
       arrivalTimeArr.some((t) => t < 0) ||
       burstTimeArr.some((t) => t < 0)
     ) {
-      toast("Negative integers are not allowed", {icon: "❌"});
+      toast("Negative integers are not allowed", { icon: "❌" });
       return;
-    } else if (selectedAlgo.value === "RR" && timeQuantumInt < 0) (
-      toast("Negative integers are not allowed", {icon: "❌"})
-    )
+    } else if (selectedAlgo.value === "RR" && timeQuantumInt < 0) {
+      toast("Negative integers are not allowed", { icon: "❌" });
+      return;
+    }
 
     if (selectedAlgo.value === "NPP" || selectedAlgo.value === "PP") {
       if (priorities.trim() === "") {
@@ -92,7 +95,9 @@ function Inputs(props: InputProps) {
         prioritiesArr.length !== arrivalTimeArr.length ||
         prioritiesArr.length !== arrivalTimeArr.length
       ) {
-        toast("The number of arrival times and priorities must be equal", {icon: "❌"});
+        toast("The number of arrival times and priorities must be equal", {
+          icon: "❌",
+        });
         return;
       }
     }
@@ -105,8 +110,8 @@ function Inputs(props: InputProps) {
         props.setTimeQuantum(timeQuantumInt),
         props.setPriorities(prioritiesArr),
       ]).then(() => {
-        toast.success("Input received", {icon: "✅"});
-      })
+        toast.success("Input received", { icon: "✅" });
+      });
     });
   }
 
@@ -145,7 +150,8 @@ function Inputs(props: InputProps) {
               color="primary"
               fullWidth
               classNames={{
-                inputWrapper: "h-[2.75rem] min-h-[2.75rem] lg:h-[2.5rem] lg:min-h-[2.5rem]",
+                inputWrapper:
+                  "h-[2.75rem] min-h-[2.75rem] lg:h-[2.5rem] lg:min-h-[2.5rem]",
               }}
               onChange={handleBurstTimeChange}
               isDisabled={isPending}
@@ -159,7 +165,8 @@ function Inputs(props: InputProps) {
               color="primary"
               fullWidth
               classNames={{
-                inputWrapper: "h-[2.75rem] min-h-[2.75rem] lg:h-[2.5rem] lg:min-h-[2.5rem]",
+                inputWrapper:
+                  "h-[2.75rem] min-h-[2.75rem] lg:h-[2.5rem] lg:min-h-[2.5rem]",
               }}
               onChange={handleArrivalTimeChange}
               isDisabled={isPending}
@@ -175,7 +182,8 @@ function Inputs(props: InputProps) {
                 color="primary"
                 fullWidth
                 classNames={{
-                  inputWrapper: "h-[2.75rem] min-h-[2.75rem] lg:h-[2.5rem] lg:min-h-[2.5rem]",
+                  inputWrapper:
+                    "h-[2.75rem] min-h-[2.75rem] lg:h-[2.5rem] lg:min-h-[2.5rem]",
                 }}
                 min="1"
                 step="1"
@@ -193,7 +201,8 @@ function Inputs(props: InputProps) {
                 color="primary"
                 fullWidth
                 classNames={{
-                  inputWrapper: "h-[2.75rem] min-h-[2.75rem] lg:h-[2.5rem] lg:min-h-[2.5rem]",
+                  inputWrapper:
+                    "h-[2.75rem] min-h-[2.75rem] lg:h-[2.5rem] lg:min-h-[2.5rem]",
                 }}
                 isDisabled={isPending}
               />
