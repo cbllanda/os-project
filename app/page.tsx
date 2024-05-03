@@ -41,8 +41,8 @@ export default function Home() {
             const canvas = document.createElement("canvas");
             const ctx = canvas.getContext("2d");
 
-            canvas.width = img.width * 1.2;
-            canvas.height = img.height * 1.2;
+            canvas.width = img.width;
+            canvas.height = img.height;
 
             if (ctx) {
               ctx.imageSmoothingQuality = "high";
