@@ -1,4 +1,7 @@
 import { Code } from "@nextui-org/code";
+import { cn } from "@nextui-org/system";
+
+import { fontMono } from "@/config/fonts";
 
 interface AverageTurnaroundTimeProps {
   totalTurnaroundTime: number;
@@ -14,7 +17,7 @@ function AverageTurnaroundTime({
   return (
     <div className="my-[0.8rem]">
       <label className="font-semibold">Average Turnaround Time: </label>
-      <Code className="tracking-wide" size="md">
+      <Code className={cn("tracking-wide text-primary", fontMono.className)} size="md">
         {totalTurnaroundTime} / {numberOfProcesses} ={" "}
         {averageTurnaroundTime.toFixed(2)}ms
       </Code>

@@ -1,4 +1,7 @@
-import { Code } from "@nextui-org/react";
+import { Code } from "@nextui-org/code";
+import { cn } from "@nextui-org/system";
+
+import { fontMono } from "@/config/fonts";
 
 interface CpuProps {
   totalCpuTime: number;
@@ -12,7 +15,7 @@ function CpuUtilization({ totalCpuTime, totalElapsedTime }: CpuProps) {
   return (
     <div className="my-[0.8rem]">
       <label className="font-semibold">CPU Utilization: </label>
-      <Code className="tracking-wide" size="md">{totalCpuTime} / {totalElapsedTime} * 100 = {cpuUtilization.toFixed(2)}%</Code>
+      <Code className={cn("tracking-wide text-primary", fontMono.className)} size="md">{totalCpuTime} / {totalElapsedTime} * 100 = {cpuUtilization.toFixed(2)}%</Code>
     </div>
   );
 }

@@ -49,7 +49,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             position="top-left"
             toastOptions={{
               className:
-                "bg-zinc-100 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 border-white/80 dark:border-zinc-900/90 border text-sm",
+                "bg-zinc-100 dark:bg-[#18181a] text-zinc-900 dark:text-zinc-100 border-white/80 dark:border-zinc-900/90 border tracking-wide",
               style: {
                 borderRadius: "0.75rem",
               },

@@ -11,7 +11,7 @@ function Members() {
         delay={50}
         closeDelay={80}
         classNames={{
-          base: "!w-[10rem] font-medium text-lg",
+          base: "!w-[11rem] font-medium text-lg",
         }}
         color="primary"
       >
@@ -27,7 +27,7 @@ function Members() {
         delay={50}
         closeDelay={80}
         classNames={{
-          base: "!w-[10rem] font-medium text-lg",
+          base: "!w-[11rem] font-medium text-lg",
         }}
         color="primary"
       >
@@ -43,7 +43,7 @@ function Members() {
         delay={50}
         closeDelay={80}
         classNames={{
-          base: "!w-[10rem] font-medium text-lg",
+          base: "!w-[11rem] font-medium text-lg",
         }}
         color="primary"
       >
@@ -65,7 +65,7 @@ function Members() {
         delay={50}
         closeDelay={80}
         classNames={{
-          base: "!w-[10rem] font-medium text-lg",
+          base: "!w-[11rem] font-medium text-lg",
         }}
         color="primary"
       >
@@ -81,7 +81,7 @@ function Members() {
         delay={50}
         closeDelay={80}
         classNames={{
-          base: "!w-[10rem] font-medium text-lg",
+          base: "!w-[11rem] font-medium text-lg",
         }}
         color="primary"
       >
@@ -97,7 +97,7 @@ function Members() {
         delay={50}
         closeDelay={80}
         classNames={{
-          base: "!w-[10rem] font-medium text-lg",
+          base: "!w-[11rem] font-medium text-lg",
         }}
         color="primary"
       >
@@ -113,7 +113,7 @@ function Members() {
         delay={50}
         closeDelay={80}
         classNames={{
-          base: "!w-[10rem] font-medium text-lg",
+          base: "!w-[11rem] font-medium text-lg",
         }}
         color="primary"
       >
@@ -129,7 +129,7 @@ function Members() {
         delay={50}
         closeDelay={80}
         classNames={{
-          base: "!w-[10rem] font-medium text-lg",
+          base: "!w-[11rem] font-medium text-lg",
         }}
         color="primary"
       >

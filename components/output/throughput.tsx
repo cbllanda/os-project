@@ -1,4 +1,7 @@
 import { Code } from "@nextui-org/code";
+import { cn } from "@nextui-org/system";
+
+import { fontMono } from "@/config/fonts";
 
 interface ThroughputProps {
   numberOfProcesses: number;
@@ -11,7 +14,7 @@ function Throughput({ numberOfProcesses, totalTime }: ThroughputProps) {
   return (
     <div className="my-[0.8rem]">
       <label className="font-semibold">Throughput: </label>
-      <Code className="tracking-wide" size="md">
+      <Code className={cn("tracking-wide text-primary", fontMono.className)} size="md">
         {numberOfProcesses} / {totalTime} = {throughput.toFixed(2)}
       </Code>
     </div>
