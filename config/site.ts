@@ -1,9 +1,9 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "OS-Project",
+  name: "Reckon",
   description:
-    "Dynamically generates gantt chart and calculates TAT (turnaround time) and WAT (waiting time) based on various CPU scheduling algorithms.",
+    "Operating System Project - A web-based application that dynamically generates an output card which includes gantt chart and key answers by calculating the cpu scheduling process inputted by the user based on the selected algorithm.",
   groupMembers: {
     leader: "Carl Jerrick Llanda",
     members: [
