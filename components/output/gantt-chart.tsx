@@ -1,5 +1,5 @@
 import { Card, CardBody, CardFooter } from "@nextui-org/card";
-import { Space } from "lucide-react";
+import { Asterisk, Space } from "lucide-react";
 
 interface ganttChartInfoType {
   job: string;
@@ -14,19 +14,42 @@ interface GanttChartProps {
 function GanttChart({ ganttChartInfo }: GanttChartProps) {
   const renderedItems = ganttChartInfo.reduce(
     (acc: JSX.Element[], info, index) => {
+      // Add placeholder card for gap before the first process starts
+      if (index === 0 && info.start > 0) {
+        acc.push(
+          <Card
+          key={index}
+          className="flex !w-[4.2rem] !h-[4.2rem] bg-[#fafafa] dark:bg-[#27272c]"
+          radius="none"
+        >
+          <CardBody className="flex justify-center items-center overflow-hidden">
+            <div className="text-center font-bold mt-2">
+              <Asterisk strokeWidth={2.5} />
+            </div>
+          </CardBody>
+          <CardFooter className="flex text-xs text-center">
+            <div className="flex justify-center w-full bottom-[0.2rem]">
+              <span className="absolute left-2">0</span> {" - "}
+              <span className="absolute right-2">{ganttChartInfo[0].start}</span>
+            </div>
+          </CardFooter>
+        </Card>
+        );
+      }
+
       acc.push(
         <Card
           key={index}
-          className="flex !w-[4.2rem] !h-[4.2rem] bg-[#f4f4f8] dark:bg-[#27272c]"
+          className="flex !w-[4.2rem] !h-[4.2rem] bg-[#fafafa] dark:bg-[#27272c]"
           radius="none"
         >
           <CardBody className="flex justify-center items-center overflow-hidden">
             <div className="text-center font-bold mt-2">{info.job}</div>
           </CardBody>
           <CardFooter className="flex text-xs text-center">
-            <div className="relative w-full bottom-[0.2rem]">
-              <span className="absolute left-0">{info.start}</span> -
-              <span className="absolute right-0">{info.stop}</span>
+            <div className="flex justify-center w-full bottom-[0.2rem]">
+              <span className="absolute left-2">{info.start}</span> {" - "}
+              <span className="absolute right-2">{info.stop}</span>
             </div>
           </CardFooter>
         </Card>
@@ -40,18 +63,20 @@ function GanttChart({ ganttChartInfo }: GanttChartProps) {
         acc.push(
           <Card
             key={`gap-${index}`}
-            className="flex !w-[4.2rem] !h-[4.2rem] bg-[#f4f4f8] dark:bg-[#27272c]"
+            className="flex !w-[4.2rem] !h-[4.2rem] bg-[#fafafa] dark:bg-[#27272c]"
             radius="none"
           >
-          <CardBody className="flex justify-center items-center overflow-hidden">
-            <div className="text-center mt-2">
-              <Space strokeWidth={2.5} />
-            </div>
-          </CardBody>
+            <CardBody className="flex justify-center items-center overflow-hidden">
+              <div className="text-center mt-2">
+                <Space strokeWidth={2.5} />
+              </div>
+            </CardBody>
             <CardFooter className="flex text-xs text-center">
-              <div className="relative w-full bottom-[0.2rem]">
-                <span className="absolute left-0">{info.stop}</span> -
-                <span className="absolute right-0">{ganttChartInfo[index + 1].start}</span>
+              <div className="flex justify-center w-full bottom-[0.2rem]">
+                <span className="absolute left-2">{info.stop}</span> {" - "}
+                <span className="absolute right-2">
+                  {ganttChartInfo[index + 1].start}
+                </span>
               </div>
             </CardFooter>
           </Card>

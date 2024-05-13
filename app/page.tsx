@@ -34,33 +34,10 @@ export default function Home() {
       .toBlob(cardElement)
       .then(function (blob) {
         if (blob) {
-          const img = new Image();
-          img.src = URL.createObjectURL(blob);
-
-          img.onload = function () {
-            const canvas = document.createElement("canvas");
-            const ctx = canvas.getContext("2d");
-
-            canvas.width = img.width;
-            canvas.height = img.height;
-
-            if (ctx) {
-              ctx.imageSmoothingQuality = "high";
-            }
-
-            ctx?.drawImage(img, 0, 0, canvas.width, canvas.height);
-
-            canvas.toBlob(function (scaledBlob) {
-              if (scaledBlob) {
-                const link = document.createElement("a");
-                link.download = `${new Date().toISOString()}.png`;
-                link.href = URL.createObjectURL(scaledBlob);
-                link.click();
-              } else {
-                console.error("Failed to scale the image.");
-              }
-            });
-          };
+          const link = document.createElement("a");
+          link.download = `${new Date().toISOString()}.png`;
+          link.href = URL.createObjectURL(blob);
+          link.click();
         } else {
           console.error("Failed to capture the card element as an image.");
         }

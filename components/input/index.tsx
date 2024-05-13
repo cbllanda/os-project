@@ -71,20 +71,29 @@ function Inputs(props: InputProps) {
       });
       return;
     } else if (
-      arrivalTimeArr.some((t) => isNaN(t)) ||
       burstTimeArr.some((t) => isNaN(t)) ||
+      arrivalTimeArr.some((t) => isNaN(t)) ||
       (selectedAlgo.value === "RR" && isNaN(timeQuantumInt))
     ) {
       toast("Invalid input", { icon: "❌" });
       return;
     } else if (
-      arrivalTimeArr.some((t) => t < 0) ||
-      burstTimeArr.some((t) => t < 0)
+      burstTimeArr.some((t) => t < 0) ||
+      arrivalTimeArr.some((t) => t < 0)
     ) {
       toast("Negative integers are not allowed", { icon: "❌" });
       return;
     } else if (selectedAlgo.value === "RR" && timeQuantumInt < 0) {
       toast("Negative integers are not allowed", { icon: "❌" });
+      return;
+    } else if (burstTimeArr.length > 8 || arrivalTimeArr.length > 8) {
+      toast("Maximum 8 processes are allowed", { icon: "❌" });
+      return;
+    } else if (
+      burstTimeArr.some((t) => t < 1 || t > 99) ||
+      arrivalTimeArr.some((t) => t < 0 || t > 99)
+    ) {
+      toast("Each process must have exactly 2 digits", { icon: "❌" });
       return;
     }
 
