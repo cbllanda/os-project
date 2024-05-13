@@ -12,7 +12,7 @@ function CpuUtilization({ totalCpuTime, totalElapsedTime }: CpuProps) {
 
   return (
     <div className="my-[0.8rem]">
-      <label className="font-semibold">CPU Utilization: </label>
+      <label className="font-medium">CPU Utilization: </label>
       <code
         className={cn(
           `tracking-wide text-primary-500 block w-fit mt-1 sm:inline-block sm:mt-0 bg-primary-600/10 dark:primary-500/20 rounded-[0.75rem] p-1 px-[0.75rem] ${fontMono.className}`,
