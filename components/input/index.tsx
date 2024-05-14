@@ -90,10 +90,10 @@ function Inputs(props: InputProps) {
       toast("Maximum 8 processes are allowed", { icon: "❌" });
       return;
     } else if (
-      burstTimeArr.some((t) => t < 1 || t > 99) ||
-      arrivalTimeArr.some((t) => t < 0 || t > 99)
+      burstTimeArr.some((t) => t < 1 || t > 15) ||
+      arrivalTimeArr.some((t) => t < 0 || t > 15)
     ) {
-      toast("Each process must have exactly 2 digits", { icon: "❌" });
+      toast("Maximum burst and arrival time is 15", { icon: "❌" });
       return;
     }
 

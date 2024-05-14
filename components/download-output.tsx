@@ -12,14 +12,14 @@ function DownloadOutput({ onPress, isDisabled, isDownloading }: DownloadOutputPr
   return (
     <Button
       isIconOnly
-      className="bg-transparent border-default-500 dark:border-default-600 text-default-500 dark:text-default-600"
+      className="bg-transparent text-default-500 dark:text-default-600"
       onPress={onPress}
       isDisabled={isDisabled || isDownloading}
     >
       {isDownloading ? (
         <Loader2 className="!w-6 !h-6 animate-spin" />
       ) : (
-        <Download className="text-default-500 dark:text-default-600" />
+        <Download />
       )}
     </Button>
   );

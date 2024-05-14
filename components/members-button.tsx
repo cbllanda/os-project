@@ -7,10 +7,13 @@ interface MembersButtonProps {
 }
 
 function MembersButton({ onOpen }: MembersButtonProps) {
-  
   return (
-    <Button isIconOnly onPress={onOpen} className="bg-transparent">
-      <Users className="text-default-500 dark:text-default-600" />
+    <Button
+      isIconOnly
+      onPress={onOpen}
+      className="bg-transparent text-default-500 dark:text-default-600"
+    >
+      <Users />
     </Button>
   );
 }

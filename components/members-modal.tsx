@@ -1,11 +1,9 @@
-"use client";
-
 import { Modal, ModalContent, ModalHeader, ModalBody } from "@nextui-org/modal";
+import { cn } from "@nextui-org/system";
 
+import { title } from "@/components/primitives";
 import Members from "@/components/members";
 import { Meteors } from "@/components/ui/meteors";
-import { title } from "./primitives";
-import { cn } from "@nextui-org/system";
 
 interface MembersModalProps {
   isOpen: boolean;
